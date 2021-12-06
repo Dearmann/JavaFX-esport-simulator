@@ -1,0 +1,61 @@
+@options
+@packages
+@argfile
+-encoding
+'UTF-8'
+-protected
+-source
+'11'
+-sourcepath
+'C:/Users/dusza/OneDrive/Dokumenty/NetBeansProjects/Esport/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2021. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'C:/Users/dusza/OneDrive/Dokumenty/NetBeansProjects/Esport/target/site/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'Esport 1.0-SNAPSHOT API'
+-linkoffline
+'https://docs.oracle.com/en/java/javase/11/docs/api' 'C:/Users/dusza/OneDrive/Dokumenty/NetBeansProjects/Esport/target/javadoc-bundle-options'
+-use
+-version
+-windowtitle
+'Esport 1.0-SNAPSHOT API'
+exception
+javalab.controller
+javalab.esport
+javalab.model
+javalab.view
+'C:/Users/dusza/OneDrive/Dokumenty/NetBeansProjects/Esport/src/main/java/exception/NotEnoughPlayersException.java'
+'C:/Users/dusza/OneDrive/Dokumenty/NetBeansProjects/Esport/src/main/java/exception/WrongPlayerPositionException.java'
+'C:/Users/dusza/OneDrive/Dokumenty/NetBeansProjects/Esport/src/main/java/javalab/controller/MainController.java'
+'C:/Users/dusza/OneDrive/Dokumenty/NetBeansProjects/Esport/src/main/java/javalab/esport/Main.java'
+'C:/Users/dusza/OneDrive/Dokumenty/NetBeansProjects/Esport/src/main/java/javalab/model/Player.java'
+'C:/Users/dusza/OneDrive/Dokumenty/NetBeansProjects/Esport/src/main/java/javalab/model/Team.java'
+'C:/Users/dusza/OneDrive/Dokumenty/NetBeansProjects/Esport/src/main/java/javalab/view/MainMenuView.java'
+C:\Users\dusza\OneDrive\Dokumenty\NetBeansProjects\Esport\src\main\java = 1635341248623
+C:\Users\dusza\OneDrive\Dokumenty\NetBeansProjects\Esport\target\site\apidocs\allclasses-index.html = 1637166994760
+C:\Users\dusza\OneDrive\Dokumenty\NetBeansProjects\Esport\target\site\apidocs\allclasses.html = 1637166994792
+C:\Users\dusza\OneDrive\Dokumenty\NetBeansProjects\Esport\target\site\apidocs\allpackages-index.html = 1637166994768
+C:\Users\dusza\OneDrive\Dokumenty\NetBeansProjects\Esport\target\site\apidocs\constant-values.html = 1637166994304
+C:\Users\dusza\OneDrive\Dokumenty\NetBeansProjects\Esport\target\site\apidocs\deprecated-list.html = 1637166994784
+C:\Users\dusza\OneDrive\Dokumenty\NetBeansProjects\Esport\target\site\apidocs\element-list = 1637166994104
+C:\Users\dusza\OneDrive\Dokumenty\NetBeansProjects\Esport\target\site\apidocs\help-doc.html = 1637166994816
+C:\Users\dusza\OneDrive\Dokumenty\NetBeansProjects\Esport\target\site\apidocs\index-all.html = 1637166994744
+C:\Users\dusza\OneDrive\Dokumenty\NetBeansProjects\Esport\target\site\apidocs\index.html = 1637166994800
+C:\Users\dusza\OneDrive\Dokumenty\NetBeansProjects\Esport\target\site\apidocs\member-search-index.js = 1637166994728
+C:\Users\dusza\OneDrive\Dokumenty\NetBeansProjects\Esport\target\site\apidocs\member-search-index.zip = 1637166994736
+C:\Users\dusza\OneDrive\Dokumenty\NetBeansProjects\Esport\target\site\apidocs\overview-summary.html = 1637166994808
+C:\Users\dusza\OneDrive\Dokumenty\NetBeansProjects\Esport\target\site\apidocs\overview-tree.html = 1637166994576
+C:\Users\dusza\OneDrive\Dokumenty\NetBeansProjects\Esport\target\site\apidocs\package-search-index.js = 1637166994656
+C:\Users\dusza\OneDrive\Dokumenty\NetBeansProjects\Esport\target\site\apidocs\package-search-index.zip = 1637166994712
+C:\Users\dusza\OneDrive\Dokumenty\NetBeansProjects\Esport\target\site\apidocs\script.js = 1637166994880
+C:\Users\dusza\OneDrive\Dokumenty\NetBeansProjects\Esport\target\site\apidocs\search.js = 1637166994912
+C:\Users\dusza\OneDrive\Dokumenty\NetBeansProjects\Esport\target\site\apidocs\serialized-form.html = 1637166994328
+C:\Users\dusza\OneDrive\Dokumenty\NetBeansProjects\Esport\target\site\apidocs\stylesheet.css = 1637166994840
+C:\Users\dusza\OneDrive\Dokumenty\NetBeansProjects\Esport\target\site\apidocs\type-search-index.js = 1637166994712
+C:\Users\dusza\OneDrive\Dokumenty\NetBeansProjects\Esport\target\site\apidocs\type-search-index.zip = 1637166994720
