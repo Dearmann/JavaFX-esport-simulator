@@ -1,1 +1,0 @@
-packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"exception"},{"l":"javalab.controller"},{"l":"javalab.esport"},{"l":"javalab.model"},{"l":"javalab.view"}]
