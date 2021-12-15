@@ -43,22 +43,23 @@ public class TeamTest {
 
     /**
      * Test of countMissingPlayers method, of class Team with valid position values.
+     * Test outdated - now always initialize all players with name "Player" and strength - 0.
      * @param players number of players added
      */
-    @ParameterizedTest
-    @ValueSource(ints = {0, 1, 2, 3, 4})
-    public void testCountMissingPlayers(int players) {
-        try {
-            for (int i = 0; i < players; i++) {
-                testTeam.addPlayer(i, "testPlayer", 0);
-            }
-        } catch (WrongPlayerPositionException e) {
-            e.getMessage();
-        }
-        int expResult = 5 - players;
-        int result = testTeam.countMissingPlayers();
-        assertEquals(expResult, result);
-    }
+//    @ParameterizedTest
+//    @ValueSource(ints = {0, 1, 2, 3, 4})
+//    public void testCountMissingPlayers(int players) {
+//        try {
+//            for (int i = 0; i < players; i++) {
+//                testTeam.addPlayer(i, "testPlayer", 0);
+//            }
+//        } catch (WrongPlayerPositionException e) {
+//            e.getMessage();
+//        }
+//        int expResult = 5 - players;
+//        int result = testTeam.countMissingPlayers();
+//        assertEquals(expResult, result);
+//    }
 
     /**
      * Test of countMissingPlayers method, of class Team with invalid position values.

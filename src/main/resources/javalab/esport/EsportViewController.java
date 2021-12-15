@@ -32,19 +32,49 @@ import javalab.model.Team;
  */
 public class EsportViewController implements Initializable {
 
+    /**
+     * List of all teams
+     */
     public ObservableList<Team> teamList;
+
+    /**
+     * List of teams to delete
+     */
     private ListView<Team> teamListToDelete;
 
+    /**
+     * Main view
+     */
     @FXML
     private GridPane mainView;
+
+    /**
+     * List of teams on the left
+     */
     @FXML
     private ListView<Team> team1;
+
+    /**
+     * List of teams on the right
+     */
     @FXML
     private ListView<Team> team2;
+
+    /**
+     * List of players on the left
+     */
     @FXML
     private ListView<Player> players1;
+
+    /**
+     * List of players on the right
+     */
     @FXML
     private ListView<Player> players2;
+
+    /**
+     * Match result label
+     */
     @FXML
     private Label matchResult;
 
@@ -61,7 +91,6 @@ public class EsportViewController implements Initializable {
         try {
             dialog.getDialogPane().setContent(fxmlLoader.load());
         } catch (IOException e) {
-            System.out.println("Couldn't load the dialog");
             e.printStackTrace();
             return;
         }
@@ -73,7 +102,9 @@ public class EsportViewController implements Initializable {
         if (result.isPresent() && result.get() == ButtonType.OK) {
             NewTeamController controller = fxmlLoader.getController();
             String newTeamName = controller.getNewTeamName();
-            teamList.add(new Team(newTeamName, 0));
+            if (!newTeamName.isBlank()) {
+                teamList.add(new Team(newTeamName, 0));
+            }
         } else {
 
         }
@@ -96,7 +127,9 @@ public class EsportViewController implements Initializable {
         Optional<ButtonType> result = dialog.showAndWait();
         if (result.isPresent() && result.get() == ButtonType.OK) {
             Team teamToDelete = teamListToDelete.getSelectionModel().getSelectedItem();
-            System.out.println(teamToDelete.getTeamName());
+            if (teamToDelete == null) {
+                return;
+            }
             teamList.remove(teamToDelete);
             team1.getSelectionModel().clearSelection();
             team2.getSelectionModel().clearSelection();
@@ -120,7 +153,6 @@ public class EsportViewController implements Initializable {
         try {
             dialog.getDialogPane().setContent(fxmlLoader.load());
         } catch (IOException e) {
-            System.out.println("Couldn't load the dialog");
             e.printStackTrace();
             return;
         }
@@ -214,6 +246,9 @@ public class EsportViewController implements Initializable {
     @FXML
     public void pickTeam1(MouseEvent arg0) {
         Team selectedTeam = team1.getSelectionModel().getSelectedItem();
+        if (selectedTeam == null) {
+            return;
+        }
         ObservableList<Player> playerList = FXCollections.observableArrayList(selectedTeam.getTeamPlayers());
         players1.setItems(playerList);
     }
@@ -226,6 +261,9 @@ public class EsportViewController implements Initializable {
     @FXML
     public void pickTeam2(MouseEvent arg0) {
         Team selectedTeam = team2.getSelectionModel().getSelectedItem();
+        if (selectedTeam == null) {
+            return;
+        }
         ObservableList<Player> playerList = FXCollections.observableArrayList(selectedTeam.getTeamPlayers());
         players2.setItems(playerList);
     }

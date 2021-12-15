@@ -23,30 +23,81 @@ import javalab.model.Team;
  */
 public class EditTeamController implements Initializable {
 
+    /**
+     * Name of edited team
+     */
     @FXML
     private TextField teamName;
+
+    /**
+     * Name of player 1 - Top position.
+     */
     @FXML
     private TextField player1;
+
+    /**
+     * Strength of player 1.
+     */
     @FXML
     private TextField strength1;
+
+    /**
+     * Name of player 2 - Jungle position.
+     */
     @FXML
     private TextField player2;
+
+    /**
+     * Strength of player 2.
+     */
     @FXML
     private TextField strength2;
+
+    /**
+     * Name of player 3 - Mid position.
+     */
     @FXML
     private TextField player3;
+
+    /**
+     * Strength of player 3.
+     */
     @FXML
     private TextField strength3;
+
+    /**
+     * Name of player 4 - Bottom position.
+     */
     @FXML
     private TextField player4;
+
+    /**
+     * Strength of player 4.
+     */
     @FXML
     private TextField strength4;
+
+    /**
+     * Name of player 5 - Support position.
+     */
     @FXML
     private TextField player5;
+
+    /**
+     * Strength of player 5.
+     */
     @FXML
     private TextField strength5;
+
+    /**
+     * List of teams to edit.
+     */
     @FXML
     private ListView<Team> teamsToEdit;
+
+    /**
+     * Selected team.
+     */
     private Team selectedTeam;
 
     /**
@@ -63,22 +114,22 @@ public class EditTeamController implements Initializable {
                     player1.setText(selectedTeam.getTeamPlayers().get(0).getPlayerName());
                     strength1.setText(Integer.toString(selectedTeam.getTeamPlayers().get(0).getPlayerStrength()));
                 }
-                
+
                 if (selectedTeam.getTeamPlayers().get(1) != null) {
                     player2.setText(selectedTeam.getTeamPlayers().get(1).getPlayerName());
                     strength2.setText(Integer.toString(selectedTeam.getTeamPlayers().get(1).getPlayerStrength()));
                 }
-                
+
                 if (selectedTeam.getTeamPlayers().get(2) != null) {
                     player3.setText(selectedTeam.getTeamPlayers().get(2).getPlayerName());
                     strength3.setText(Integer.toString(selectedTeam.getTeamPlayers().get(2).getPlayerStrength()));
                 }
-                
+
                 if (selectedTeam.getTeamPlayers().get(3) != null) {
                     player4.setText(selectedTeam.getTeamPlayers().get(3).getPlayerName());
                     strength4.setText(Integer.toString(selectedTeam.getTeamPlayers().get(3).getPlayerStrength()));
                 }
-                
+
                 if (selectedTeam.getTeamPlayers().get(4) != null) {
                     player5.setText(selectedTeam.getTeamPlayers().get(4).getPlayerName());
                     strength5.setText(Integer.toString(selectedTeam.getTeamPlayers().get(4).getPlayerStrength()));

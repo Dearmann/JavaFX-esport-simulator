@@ -131,7 +131,7 @@ public class Team {
     public int countMissingPlayers() {
         int missingPlayersCount = 0;
         for (Player player : teamPlayers) {
-            if (player == null || player.getPosition() == Player.Position.UNDEFINED) {
+            if (player == null/* || player.getPosition() == Player.Position.UNDEFINED*/) {
                 missingPlayersCount++;
             }
         }
