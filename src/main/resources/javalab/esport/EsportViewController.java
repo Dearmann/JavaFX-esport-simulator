@@ -147,16 +147,28 @@ public class EsportViewController implements Initializable {
         if (result.isPresent() && result.get() == ButtonType.OK) {
             if (editController.getSelectedTeam() != null) {
                 editController.getSelectedTeam().setTeamName(editController.getTeamName().getText());
-                editController.getSelectedTeam().getTeamPlayers().get(0).setPlayerName(editController.getPlayer1().getText());
-                editController.getSelectedTeam().getTeamPlayers().get(0).setPlayerStrength(Integer.parseInt(editController.getStrength1().getText()));
-                editController.getSelectedTeam().getTeamPlayers().get(1).setPlayerName(editController.getPlayer2().getText());
-                editController.getSelectedTeam().getTeamPlayers().get(1).setPlayerStrength(Integer.parseInt(editController.getStrength2().getText()));
-                editController.getSelectedTeam().getTeamPlayers().get(2).setPlayerName(editController.getPlayer3().getText());
-                editController.getSelectedTeam().getTeamPlayers().get(2).setPlayerStrength(Integer.parseInt(editController.getStrength3().getText()));
-                editController.getSelectedTeam().getTeamPlayers().get(3).setPlayerName(editController.getPlayer4().getText());
-                editController.getSelectedTeam().getTeamPlayers().get(3).setPlayerStrength(Integer.parseInt(editController.getStrength4().getText()));
-                editController.getSelectedTeam().getTeamPlayers().get(4).setPlayerName(editController.getPlayer5().getText());
-                editController.getSelectedTeam().getTeamPlayers().get(4).setPlayerStrength(Integer.parseInt(editController.getStrength5().getText()));
+                if (!editController.getPlayer1().getText().isBlank() && !editController.getStrength1().getText().isBlank()) {
+                    editController.getSelectedTeam().getTeamPlayers().get(0).setPlayerName(editController.getPlayer1().getText());
+                    editController.getSelectedTeam().getTeamPlayers().get(0).setPlayerStrength(Integer.parseInt(editController.getStrength1().getText()));
+                }
+                if (!editController.getPlayer2().getText().isBlank() && !editController.getStrength2().getText().isBlank()) {
+                    editController.getSelectedTeam().getTeamPlayers().get(1).setPlayerName(editController.getPlayer2().getText());
+                    editController.getSelectedTeam().getTeamPlayers().get(1).setPlayerStrength(Integer.parseInt(editController.getStrength2().getText()));
+                }
+
+                if (!editController.getPlayer3().getText().isBlank() && !editController.getStrength3().getText().isBlank()) {
+                    editController.getSelectedTeam().getTeamPlayers().get(2).setPlayerName(editController.getPlayer3().getText());
+                    editController.getSelectedTeam().getTeamPlayers().get(2).setPlayerStrength(Integer.parseInt(editController.getStrength3().getText()));
+                }
+
+                if (!editController.getPlayer4().getText().isBlank() && !editController.getStrength4().getText().isBlank()) {
+                    editController.getSelectedTeam().getTeamPlayers().get(3).setPlayerName(editController.getPlayer4().getText());
+                    editController.getSelectedTeam().getTeamPlayers().get(3).setPlayerStrength(Integer.parseInt(editController.getStrength4().getText()));
+                }
+                if (!editController.getPlayer5().getText().isBlank() && !editController.getStrength5().getText().isBlank()) {
+                    editController.getSelectedTeam().getTeamPlayers().get(4).setPlayerName(editController.getPlayer5().getText());
+                    editController.getSelectedTeam().getTeamPlayers().get(4).setPlayerStrength(Integer.parseInt(editController.getStrength5().getText()));
+                }
             }
             team1.refresh();
             team2.refresh();
@@ -178,6 +190,7 @@ public class EsportViewController implements Initializable {
         Team teamOne = team1.getSelectionModel().getSelectedItem();
         Team teamTwo = team2.getSelectionModel().getSelectedItem();
         if (teamOne == null || teamTwo == null) {
+            matchResult.setText("Choose 2 teams to fight first.");
             return;
         }
         try {

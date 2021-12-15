@@ -53,11 +53,11 @@ public class Team {
         this.teamName = teamName;
         this.teamRanking = teamRanking;
         teamPlayers = new ArrayList<>(5);
-        teamPlayers.add(0, null);
-        teamPlayers.add(1, null);
-        teamPlayers.add(2, null);
-        teamPlayers.add(3, null);
-        teamPlayers.add(4, null);
+        teamPlayers.add(0, new Player("Player1", 0));
+        teamPlayers.add(1, new Player("Player2", 0));
+        teamPlayers.add(2, new Player("Player3", 0));
+        teamPlayers.add(3, new Player("Player4", 0));
+        teamPlayers.add(4, new Player("Player5", 0));
     }
 
     /**

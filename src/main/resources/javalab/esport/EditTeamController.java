@@ -59,16 +59,30 @@ public class EditTeamController implements Initializable {
             public void handle(MouseEvent t) {
                 selectedTeam = teamsToEdit.getSelectionModel().getSelectedItem();
                 teamName.setText(selectedTeam.getTeamName());
-                player1.setText(selectedTeam.getTeamPlayers().get(0).getPlayerName());
-                strength1.setText(Integer.toString(selectedTeam.getTeamPlayers().get(0).getPlayerStrength()));
-                player2.setText(selectedTeam.getTeamPlayers().get(1).getPlayerName());
-                strength2.setText(Integer.toString(selectedTeam.getTeamPlayers().get(1).getPlayerStrength()));
-                player3.setText(selectedTeam.getTeamPlayers().get(2).getPlayerName());
-                strength3.setText(Integer.toString(selectedTeam.getTeamPlayers().get(2).getPlayerStrength()));
-                player4.setText(selectedTeam.getTeamPlayers().get(3).getPlayerName());
-                strength4.setText(Integer.toString(selectedTeam.getTeamPlayers().get(3).getPlayerStrength()));
-                player5.setText(selectedTeam.getTeamPlayers().get(4).getPlayerName());
-                strength5.setText(Integer.toString(selectedTeam.getTeamPlayers().get(4).getPlayerStrength()));
+                if (selectedTeam.getTeamPlayers().get(0) != null) {
+                    player1.setText(selectedTeam.getTeamPlayers().get(0).getPlayerName());
+                    strength1.setText(Integer.toString(selectedTeam.getTeamPlayers().get(0).getPlayerStrength()));
+                }
+                
+                if (selectedTeam.getTeamPlayers().get(1) != null) {
+                    player2.setText(selectedTeam.getTeamPlayers().get(1).getPlayerName());
+                    strength2.setText(Integer.toString(selectedTeam.getTeamPlayers().get(1).getPlayerStrength()));
+                }
+                
+                if (selectedTeam.getTeamPlayers().get(2) != null) {
+                    player3.setText(selectedTeam.getTeamPlayers().get(2).getPlayerName());
+                    strength3.setText(Integer.toString(selectedTeam.getTeamPlayers().get(2).getPlayerStrength()));
+                }
+                
+                if (selectedTeam.getTeamPlayers().get(3) != null) {
+                    player4.setText(selectedTeam.getTeamPlayers().get(3).getPlayerName());
+                    strength4.setText(Integer.toString(selectedTeam.getTeamPlayers().get(3).getPlayerStrength()));
+                }
+                
+                if (selectedTeam.getTeamPlayers().get(4) != null) {
+                    player5.setText(selectedTeam.getTeamPlayers().get(4).getPlayerName());
+                    strength5.setText(Integer.toString(selectedTeam.getTeamPlayers().get(4).getPlayerStrength()));
+                }
             }
         });
 
