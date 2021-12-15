@@ -23,7 +23,7 @@ public class Player {
         SUPPORT,
         UNDEFINED
     }
-    
+
     /**
      * Name of a player.
      */
@@ -41,7 +41,8 @@ public class Player {
 
     /**
      * Position getter.
-     * @return 
+     *
+     * @return
      */
     public Position getPosition() {
         return position;
@@ -49,12 +50,13 @@ public class Player {
 
     /**
      * Position setter
+     *
      * @param position player position
      */
     public void setPosition(Position position) {
         this.position = position;
     }
-    
+
     /**
      * Player constructor with initialized fields.
      *
@@ -63,6 +65,9 @@ public class Player {
      */
     public Player(String playerName, int playerStrength) {
         this.playerName = playerName;
+        if (playerStrength < 0) {
+            playerStrength = 0;
+        }
         this.playerStrength = playerStrength;
     }
 
@@ -99,6 +104,9 @@ public class Player {
      * @param playerStrength player strength
      */
     public void setPlayerStrength(int playerStrength) {
+        if (playerStrength < 0) {
+            playerStrength = 0;
+        }
         this.playerStrength = playerStrength;
     }
 }

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javalab.esport.EditTeamController">
+   <children>
+      <ListView fx:id="teamsToEdit" prefHeight="200.0" prefWidth="200.0" />
+      <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <TextField fx:id="teamName" prefHeight="31.0" prefWidth="283.0" promptText="Team name" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label alignment="CENTER" prefWidth="60.0" text="Top:" textAlignment="CENTER">
+                     <HBox.margin>
+                        <Insets right="45.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="player1" promptText="Player name" />
+                  <TextField fx:id="strength1" prefHeight="31.0" prefWidth="76.0" promptText="Strength">
+                     <HBox.margin>
+                        <Insets left="45.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label alignment="CENTER" prefWidth="60.0" text="Jungle:" textAlignment="CENTER">
+                     <HBox.margin>
+                        <Insets right="45.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="player2" promptText="Player name" />
+                  <TextField fx:id="strength2" prefHeight="31.0" prefWidth="76.0" promptText="Strength">
+                     <HBox.margin>
+                        <Insets left="45.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label alignment="CENTER" prefWidth="60.0" text="Mid:" textAlignment="CENTER">
+                     <HBox.margin>
+                        <Insets right="45.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="player3" promptText="Player name" />
+                  <TextField fx:id="strength3" prefHeight="31.0" prefWidth="76.0" promptText="Strength">
+                     <HBox.margin>
+                        <Insets left="45.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label alignment="CENTER" prefWidth="60.0" text="Bottom:" textAlignment="CENTER">
+                     <HBox.margin>
+                        <Insets right="45.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="player4" promptText="Player name" />
+                  <TextField fx:id="strength4" prefHeight="31.0" prefWidth="76.0" promptText="Strength">
+                     <HBox.margin>
+                        <Insets left="45.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label alignment="CENTER" prefWidth="60.0" text="Support:" textAlignment="CENTER">
+                     <HBox.margin>
+                        <Insets right="45.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="player5" promptText="Player name" />
+                  <TextField fx:id="strength5" prefHeight="31.0" prefWidth="76.0" promptText="Strength">
+                     <HBox.margin>
+                        <Insets left="45.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</HBox>

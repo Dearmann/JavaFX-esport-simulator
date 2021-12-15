@@ -53,11 +53,11 @@ public class Team {
         this.teamName = teamName;
         this.teamRanking = teamRanking;
         teamPlayers = new ArrayList<>(5);
-        teamPlayers.add(0, new Player("TBD", 0));
-        teamPlayers.add(1, new Player("TBD", 0));
-        teamPlayers.add(2, new Player("TBD", 0));
-        teamPlayers.add(3, new Player("TBD", 0));
-        teamPlayers.add(4, new Player("TBD", 0));
+        teamPlayers.add(0, null);
+        teamPlayers.add(1, null);
+        teamPlayers.add(2, null);
+        teamPlayers.add(3, null);
+        teamPlayers.add(4, null);
     }
 
     /**
@@ -131,7 +131,7 @@ public class Team {
     public int countMissingPlayers() {
         int missingPlayersCount = 0;
         for (Player player : teamPlayers) {
-            if (player.getPosition() == Player.Position.UNDEFINED) {
+            if (player == null || player.getPosition() == Player.Position.UNDEFINED) {
                 missingPlayersCount++;
             }
         }

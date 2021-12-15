@@ -2,7 +2,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/UnitTests/JUnit5TestClass.java to edit this template
  */
-package javalab.test;
 
 import exception.WrongPlayerPositionException;
 import javalab.model.Team;
@@ -92,6 +91,9 @@ public class TeamTest {
             testTeam.addPlayer(4, "testPlayer5", number);
         } catch (WrongPlayerPositionException e) {
             e.getMessage();
+        }
+        if (number < 0) {
+            number = 0;
         }
         int expResult = number * 5;
         int result = testTeam.calculateTeamStrength();
