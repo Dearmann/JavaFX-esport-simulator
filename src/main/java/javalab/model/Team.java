@@ -4,8 +4,8 @@
  */
 package javalab.model;
 
-import exception.NotEnoughPlayersException;
-import exception.WrongPlayerPositionException;
+import javalab.exception.NotEnoughPlayersException;
+import javalab.exception.WrongPlayerPositionException;
 import java.util.ArrayList;
 import java.util.List;
 
