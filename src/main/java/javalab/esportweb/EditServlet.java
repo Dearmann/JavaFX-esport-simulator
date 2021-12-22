@@ -62,7 +62,7 @@ public class EditServlet extends HttpServlet {
             out.println("<label>Support: </label>");
             out.println("<input type='text' placeholder='Player name' name='player5' value='" + teamList.get(indexToEdit).getTeamPlayers().get(4).getPlayerName() + "'>");
             out.println("<input type='number' placeholder='Player strength' name='str5' value='" + teamList.get(indexToEdit).getTeamPlayers().get(4).getPlayerStrength() + "'><br>");
-            out.println("<input type='submit' value='Create team' style='margin: 15px 0;'>");
+            out.println("<input type='submit' value='Edit team' style='margin: 15px 0;'>");
             out.println("</form>");
             out.println("<a href='/EsportWeb'><button>Cancel</button></a>");
             out.println("</body>");
