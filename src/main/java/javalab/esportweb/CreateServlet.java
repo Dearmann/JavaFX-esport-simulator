@@ -11,6 +11,7 @@ import javalab.exception.WrongPlayerPositionException;
 import javalab.model.Team;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -95,7 +96,7 @@ public class CreateServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         ArrayList<Team> teamList = (ArrayList<Team>) request.getSession().getAttribute("teamList");
-
+        
         Team newTeam = new Team(request.getParameter("team").length() == 0 ? "Unnamed team" : request.getParameter("team"), 0);
         try {
             newTeam.addPlayer(0,
@@ -116,8 +117,22 @@ public class CreateServlet extends HttpServlet {
         } catch (WrongPlayerPositionException ex) {
             ex.getMessage();
         }
-
+        
         teamList.add(newTeam);
+        
+        int newTeams;
+        Cookie[] cookies = request.getCookies();
+        if (cookies != null) {
+            for (Cookie cookie : cookies) {
+                if (cookie.getName().equals("newTeams")) {
+                    newTeams = Integer.parseInt(cookie.getValue());
+                    newTeams++;
+                    cookie.setValue("" + newTeams);
+                    response.addCookie(cookie);
+                }
+            }
+        }
+        
         response.sendRedirect("/EsportWeb");
     }
 

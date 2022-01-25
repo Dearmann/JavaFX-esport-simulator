@@ -20,9 +20,13 @@ import javax.servlet.http.*;
 public class EsportServlet extends HttpServlet {
 
     private ArrayList<Team> teamList;
+    private int newTeams;
+    private int deletedTeams;
+    private int editedTeams;
 
     /**
      * Initialize teams
+     *
      * @throws ServletException serverlet exception
      */
     @Override
@@ -57,6 +61,30 @@ public class EsportServlet extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+
+        Cookie[] cookies = request.getCookies();
+        newTeams = 0;
+        deletedTeams = 0;
+        editedTeams = 0;
+        if (cookies != null) {
+            for (Cookie cookie : cookies) {
+                if (cookie.getName().equals("newTeams")) {
+                    newTeams = Integer.parseInt(cookie.getValue());
+                }
+                if (cookie.getName().equals("deletedTeams")) {
+                    deletedTeams = Integer.parseInt(cookie.getValue());
+                }
+                if (cookie.getName().equals("editedTeams")) {
+                    editedTeams = Integer.parseInt(cookie.getValue());
+                }
+            }
+        }
+        Cookie cookie = new Cookie("newTeams", "" + newTeams);
+        response.addCookie(cookie);
+        cookie = new Cookie("deletedTeams", "" + deletedTeams);
+        response.addCookie(cookie);
+        cookie = new Cookie("editedTeams", "" + editedTeams);
+        response.addCookie(cookie);
 
         response.setContentType("text/html; charset=ISO-8859-2");
         PrintWriter out = response.getWriter();
@@ -153,6 +181,9 @@ public class EsportServlet extends HttpServlet {
                 + "<form action='/EsportWeb/Choose'><button type='submit' style='margin: 50px; width: 100px;'>Edit team</button></form></td>"
                 + "<td>" + createHtmlTeamsList(2) + "</td>"
                 + "</tr></table></form>"
+                + "<p>New teams: " + newTeams + "</p>"
+                + "<p>Deleted teams: " + deletedTeams + "</p>"
+                + "<p>Edited teams: " + editedTeams + "</p>"
                 + "\n</body>\n</html>");
     }
 }

@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author dusza
+ * @author Dominik Uszok
  */
 @WebServlet(name = "DeleteServlet", urlPatterns = {"/Delete"})
 public class DeleteServlet extends HttpServlet {
@@ -99,7 +99,43 @@ public class DeleteServlet extends HttpServlet {
             throws ServletException, IOException {
         ArrayList<Team> teamList = (ArrayList<Team>) request.getSession().getAttribute("teamList");
         if (request.getParameter("delete") == null) {
-            response.sendRedirect("/EsportWeb");
+//            response.sendRedirect("/EsportWeb");
+            response.setContentType("text/html;charset=UTF-8");
+            try (PrintWriter out = response.getWriter()) {
+                out.println("<!DOCTYPE html>");
+                out.println("<html>");
+                out.println("<head>");
+                out.println("<title>Delete Team</title>");
+                out.println("</head>");
+                out.println("<body>");
+                out.println("<form method='post'>");
+                out.println("<h1>Team not selected!</h1>");
+                out.println("<h1>Select team to delete:</h1>");
+                StringBuilder htmlTeams = new StringBuilder();
+                int teamCounter = 0;
+                for (Team team : teamList) {
+                    htmlTeams.append("<input type='radio' name='delete").append("'")
+                            .append(" value='").append(teamCounter).append("'>");
+                    htmlTeams.append("<label>").append(team.getTeamName()).append("</label>");
+                    htmlTeams.append("<ul>");
+                    for (Player player : team.getTeamPlayers()) {
+                        htmlTeams.append("<li>");
+                        htmlTeams.append(player.getPlayerName());
+                        htmlTeams.append(" - ");
+                        htmlTeams.append(player.getPlayerStrength());
+                        htmlTeams.append(" STR");
+                        htmlTeams.append("</li>");
+                    }
+                    htmlTeams.append("</ul><br>");
+                    teamCounter++;
+                }
+                out.println(htmlTeams.toString());
+                out.println("<input type='submit' value='Delete team' style='margin: 15px 0;'>");
+                out.println("</form>");
+                out.println("<a href='/EsportWeb'><button>Cancel</button></a>");
+                out.println("</body>");
+                out.println("</html>");
+            }
             return;
         }
         int indexToDelete = Integer.parseInt(request.getParameter("delete"));

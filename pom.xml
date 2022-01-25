@@ -46,6 +46,11 @@
 			<version>${mockito-core.version}</version>
 			<scope>test</scope>
 		</dependency>
+        <dependency>
+            <groupId>org.apache.derby</groupId>
+            <artifactId>derby</artifactId>
+            <version>10.14.2.0</version>
+        </dependency>
     </dependencies>
 
     <build>
